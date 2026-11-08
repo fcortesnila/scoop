@@ -1,0 +1,15 @@
+services:
+  mariadb:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: scoop
+      MARIADB_USER: scoop
+      MARIADB_PASSWORD: scoop
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - scoop-api-mariadb:/var/lib/mysql
+
+volumes:
+  scoop-api-mariadb:
