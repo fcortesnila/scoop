@@ -2,6 +2,10 @@
 
 A mobile-first ice-cream truck ordering and operator app. The backend is Spring Boot 3 / Java 21 with MariaDB and Flyway; the frontend is React + Vite.
 
+## Development acknowledgments
+
+The application was designed with Claude, implemented with GitHub Copilot, and reviewed with ChatGPT.
+
 ## Run with Docker Compose
 
 1. Copy `.env.example` to `.env` and set unique MariaDB passwords, a Google OAuth client ID, and the comma-separated operator email allow-list.
@@ -14,7 +18,7 @@ A mobile-first ice-cream truck ordering and operator app. The backend is Spring 
 
 4. Open [http://localhost:5173](http://localhost:5173). Flyway creates the schema and loads starter flavors, ingredients, stops, and historical orders on the first database start.
 
-Google ID tokens are validated by the API against Google's issuer and the configured client ID. Users in `OPERATOR_EMAILS` receive operator access; other verified Google accounts are customers. The Claude-powered insights are optional; set `IA_API_KEY` to enable recommendations. Numeric inventory alerts and historical route suggestions work without it.
+Google ID tokens are validated by the API against Google's issuer and the configured client ID. Users in `OPERATOR_EMAILS` receive operator access; other verified Google accounts are customers. AI-powered insights are optional; set `IA_API_KEY` to enable recommendations. Numeric inventory alerts and historical route suggestions work without it.
 
 ## Local development
 
@@ -39,8 +43,8 @@ The demo operator button is available only in the Vite development build. To ena
 | `MARIADB_DATABASE`, `MARIADB_USER`, `MARIADB_PASSWORD`, `MARIADB_ROOT_PASSWORD` | MariaDB database and credentials |
 | `GOOGLE_CLIENT_ID` | Google OAuth web client ID; also used as the ID-token audience |
 | `OPERATOR_EMAILS` | Comma-separated verified Google email addresses granted operator access |
-| `IA_API_KEY` | Optional Claude API key for restock and route recommendations |
-| `CLAUDE_MODEL` | Claude model used for AI text features |
+| `IA_API_KEY` | Optional AI API key for restock and route recommendations |
+| `CLAUDE_MODEL` | Model name used for AI text features |
 | `SERVICE_END_HOUR` | Local service-day end hour (0–23) for stockout alerts |
 | `CORS_ORIGIN` | Allowed browser origin for the API |
 
