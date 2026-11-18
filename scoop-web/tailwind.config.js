@@ -4,13 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#fff8ed',
-        berry: '#da5d82',
-        mint: '#b9ead7',
-        ink: '#372b3b',
+        cream: '#17141f',
+        surface: '#24202f',
+        'surface-raised': '#302a3d',
+        berry: '#efa8c8',
+        mint: '#a8e3d1',
+        ink: '#f4edf7',
       },
       fontFamily: { display: ['Nunito', 'ui-rounded', 'sans-serif'] },
-      boxShadow: { soft: '0 12px 35px rgba(89, 49, 72, .09)' },
+      boxShadow: { soft: '0 12px 35px rgba(0, 0, 0, .22)' },
     },
   },
   plugins: [],

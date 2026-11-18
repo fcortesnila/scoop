@@ -8,7 +8,7 @@ export default function SiteLayout({ children }) {
   const count = items.reduce((sum, item) => sum + item.quantity, 0)
   return (
     <div className="min-h-screen bg-cream text-ink">
-      <header className="sticky top-0 z-10 border-b border-pink-100 bg-cream/95 backdrop-blur">
+      <header className="sticky top-0 z-10 border-b border-white/10 bg-cream/95 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link className="font-display text-2xl font-black tracking-tight text-berry" to="/">scoop <span aria-hidden>🍦</span></Link>
           <div className="flex items-center gap-3 text-sm font-bold sm:gap-6">

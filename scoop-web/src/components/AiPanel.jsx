@@ -19,9 +19,9 @@ export default function AiPanel({ onStartStop }) {
     return () => { active = false }
   }, [])
 
-  const urgency = { CRITICAL: 'bg-rose-100 text-rose-800', HIGH: 'bg-orange-100 text-orange-800', MEDIUM: 'bg-amber-100 text-amber-900' }
+  const urgency = { CRITICAL: 'bg-[#5a3040] text-[#ffc2d1]', HIGH: 'bg-[#59402c] text-[#ffd6a5]', MEDIUM: 'bg-[#594c2c] text-[#ffe8a3]' }
   return (
-    <section className="rounded-3xl bg-[#302a38] p-5 text-white sm:p-7">
+    <section className="rounded-3xl bg-surface-raised p-5 text-white sm:p-7">
       <div className="flex items-center justify-between gap-3"><div><p className="text-sm font-bold uppercase tracking-widest text-mint">Smart scoop</p><h2 className="mt-1 font-display text-2xl font-black">AI insights</h2></div><span className="text-3xl">✨</span></div>
       {loading && <p className="mt-5 text-white/70">Gathering a little insight…</p>}
       {!loading && errors.length > 0 && <p className="mt-4 rounded-xl bg-white/10 p-3 text-sm text-white/80">{errors[0]}</p>}

@@ -6,13 +6,17 @@
 
 :root {
   font-family: 'Nunito', ui-rounded, system-ui, sans-serif;
-  color: #372b3b;
-  background: #fff8ed;
+  color: #f4edf7;
+  background: #17141f;
+  color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; min-height: 100vh; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #17141f; }
 button, input { font: inherit; }
 button { cursor: pointer; }
+input { color: inherit; background-color: #302a3d; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid #efa8c8; outline-offset: 3px; }
+::selection { color: #17141f; background: #efa8c8; }

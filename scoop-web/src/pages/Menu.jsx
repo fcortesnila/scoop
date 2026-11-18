@@ -15,17 +15,17 @@ export default function Menu() {
     <section>
       <p className="font-extrabold uppercase tracking-widest text-berry">Made for sunny days</p>
       <h1 className="mt-2 font-display text-4xl font-black sm:text-5xl">Today’s scoops</h1>
-      {error && <p role="alert" className="mt-5 rounded-xl bg-rose-100 p-4 text-rose-800">{error}</p>}
+      {error && <p role="alert" className="mt-5 rounded-xl bg-[#452836] p-4 text-[#ffc2d1]">{error}</p>}
       {!flavors.length && !error && <p className="mt-6 text-ink/60">Loading the flavor board…</p>}
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {flavors.map((flavor, index) => (
-          <article key={flavor.id} className="rounded-3xl bg-white p-5 shadow-soft">
-            <div className={`flex h-36 items-center justify-center rounded-2xl text-6xl ${index % 2 ? 'bg-mint/50' : 'bg-[#f8dce5]'}`}>{['🍦', '🍫', '🍓', '🌿', '🍯', '🍪', '🥭', '💚'][index % 8]}</div>
+          <article key={flavor.id} className="rounded-3xl bg-surface p-5 shadow-soft">
+            <div className={`flex h-36 items-center justify-center rounded-2xl text-6xl ${index % 2 ? 'bg-mint/15' : 'bg-berry/15'}`}>{['🍦', '🍫', '🍓', '🌿', '🍯', '🍪', '🥭', '💚'][index % 8]}</div>
             <div className="mt-4 flex items-start justify-between gap-2">
               <div><h2 className="font-display text-xl font-black">{flavor.name}</h2><p className="mt-1 text-sm text-ink/60">{descriptions[index % descriptions.length]}</p></div>
               <strong className="whitespace-nowrap">${Number(flavor.price).toFixed(2)}</strong>
             </div>
-            <button disabled={!flavor.available} onClick={() => add(flavor)} className="mt-4 min-h-12 w-full rounded-full bg-berry px-4 font-extrabold text-white disabled:cursor-not-allowed disabled:bg-stone-300">
+            <button disabled={!flavor.available} onClick={() => add(flavor)} className="mt-4 min-h-12 w-full rounded-full bg-berry px-4 font-extrabold text-cream disabled:cursor-not-allowed disabled:bg-surface-raised disabled:text-ink/40">
               {flavor.available ? 'Add to cart +' : 'Sold out today'}
             </button>
           </article>
