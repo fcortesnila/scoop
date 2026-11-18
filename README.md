@@ -24,12 +24,13 @@ Google ID tokens are validated by the API against Google's issuer and the config
 
 Start MariaDB with `docker compose -f scoop-api/docker-compose.yml up -d`, then run the API from `scoop-api` with `mvn spring-boot:run` (Java 21 and Maven required). Set `GOOGLE_CLIENT_ID`, `OPERATOR_EMAILS`, and optionally `IA_API_KEY` in the environment. The API listens on port 8080.
 
-Run the web app with Node 20 or newer:
+Run the web app with Node 20 or newer and pnpm 12:
 
 ```sh
 cd scoop-web
-npm ci
-npm run dev
+corepack enable
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
 Set `VITE_GOOGLE_CLIENT_ID` in the frontend build environment for Google sign-in. Vite serves the UI on port 5173 and proxies `/api` requests to `http://localhost:8080`.
@@ -50,4 +51,4 @@ The demo operator button is available only in the Vite development build. To ena
 
 ## Tests
 
-Backend unit and MariaDB Testcontainers integration tests live under `scoop-api/src/test`. Run them with `mvn test` from `scoop-api`; Docker must be running for Testcontainers. Build-check the UI with `npm ci && npm run build` from `scoop-web`.
+Backend unit and MariaDB Testcontainers integration tests live under `scoop-api/src/test`. Run them with `mvn test` from `scoop-api`; Docker must be running for Testcontainers. Build-check the UI with `pnpm install --frozen-lockfile && pnpm build` from `scoop-web`.
